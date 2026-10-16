@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 280px; margin: 0; font: 13px -apple-system, "Segoe UI", Roboto, sans-serif; background: #111; color: #eee; }
+  header { padding: 12px 14px; border-bottom: 1px solid #333; }
+  h1 { font-size: 15px; margin: 0 0 4px; }
+  p { margin: 0; color: #999; }
+  label { display: flex; gap: 8px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #333; cursor: pointer; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: #888; margin: 12px 14px 6px; }
+  ul { list-style: none; margin: 0; padding: 0 0 8px; max-height: 260px; overflow: auto; }
+  li { padding: 6px 14px; display: flex; justify-content: space-between; }
+  li a { color: #8ab4f8; text-decoration: none; }
+  li span { color: #777; }
+  .empty { color: #777; padding: 6px 14px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>🚫 Reels Quick Block</h1>
+    <p>Open instagram.com/reels, then tap the red button or press B twice.</p>
+  </header>
+  <label><input type="checkbox" id="autoSkip"> Skip to next reel after blocking</label>
+  <h2>Blocked from reels (<span id="count">0</span>)</h2>
+  <ul id="list"></ul>
+  <script src="popup.js"></script>
+</body>
+</html>

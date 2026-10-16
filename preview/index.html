@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reels Quick Block: demo</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #000; color: #eee; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif; display: flex; gap: 40px; justify-content: center; align-items: center; min-height: 100vh; padding: 24px; flex-wrap: wrap; }
+  .phone { position: relative; width: 340px; height: 600px; border-radius: 24px; overflow: hidden; background: #111; box-shadow: 0 0 0 2px #333; }
+  .feed { height: 100%; overflow-y: auto; scroll-snap-type: y mandatory; }
+  .reel { height: 600px; scroll-snap-align: start; position: relative; display: flex; align-items: flex-end; padding: 18px; }
+  .who { display: flex; align-items: center; gap: 10px; font-weight: 600; text-shadow: 0 1px 4px #000; }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: #fff3; border: 2px solid #fff; }
+  .blocked { position: absolute; inset: 0; background: #000c; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .rqb { position: absolute; right: 14px; bottom: 70px; border: 0; border-radius: 999px; padding: 12px 18px; background: #ed4956; color: #fff; font: 600 14px sans-serif; cursor: pointer; box-shadow: 0 4px 16px #0008; }
+  .rqb.confirm { background: #b00020; }
+  .rqb.done { background: #2e7d32; }
+  .info { max-width: 440px; }
+  h1 { margin: 0 0 8px; font-size: 26px; }
+  ol { padding-left: 20px; }
+  code { background: #222; padding: 2px 6px; border-radius: 4px; }
+  .muted { color: #999; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="phone">
+    <div class="feed" id="feed"></div>
+    <button class="rqb" id="btn"></button>
+  </div>
+
+  <div class="info">
+    <h1>🚫 Reels Quick Block</h1>
+    <p>While you scroll Instagram Reels, a red button shows who posted the reel on screen. Tap it twice (or press <b>B</b> twice) and that account is blocked, then you skip to the next reel. Try it on the left.</p>
+    <h3>Install in Chrome</h3>
+    <ol>
+      <li>Open <code>chrome://extensions</code></li>
+      <li>Turn on <b>Developer mode</b> (top right)</li>
+      <li>Click <b>Load unpacked</b> and pick the <code>extension</code> folder in this project</li>
+      <li>Go to <code>instagram.com/reels</code> while logged in</li>
+    </ol>
+    <p class="muted">The toolbar popup lists everyone you've blocked and lets you turn auto-skip off.</p>
+  </div>
+
+<script>
+  const users = ["dance.daily", "foodie_frank", "clickbait.king", "cat.memes.hq", "gym_bro_99", "travel.with.mia"];
+  const colors = ["#5b2a86", "#a23b72", "#2e86ab", "#f18f01", "#3b8b5a", "#c73e1d"];
+  const feed = document.getElementById("feed"), btn = document.getElementById("btn");
+  users.forEach((u, i) => {
+    feed.insertAdjacentHTML("beforeend",
+      `<div class="reel" data-user="${u}" style="background:linear-gradient(160deg,${colors[i]},#000)">
+         <div class="who"><div class="avatar"></div>@${u}</div></div>`);
+  });
+  let confirming = false, timer;
+  const current = () => feed.children[Math.round(feed.scrollTop / 600)];
+  function render() {
+    const r = current();
+    btn.className = "rqb";
+    if (r.querySelector(".blocked")) { btn.textContent = "Blocked ✓"; btn.classList.add("done"); return; }
+    btn.textContent = confirming ? `Tap again to block @${r.dataset.user}` : `🚫 Block @${r.dataset.user}`;
+    if (confirming) btn.classList.add("confirm");
+  }
+  function activate() {
+    const r = current();
+    if (r.querySelector(".blocked")) return;
+    if (!confirming) { confirming = true; render(); clearTimeout(timer); timer = setTimeout(() => { confirming = false; render(); }, 3000); return; }
+    confirming = false; clearTimeout(timer);
+    r.insertAdjacentHTML("beforeend", `<div class="blocked">@${r.dataset.user} blocked</div>`);
+    render();
+    setTimeout(() => feed.scrollBy({ top: 600, behavior: "smooth" }), 800);
+  }
+  btn.onclick = activate;
+  document.onkeydown = e => { if (e.key.toLowerCase() === "b") activate(); };
+  feed.onscroll = () => { confirming = false; render(); };
+  render();
+</script>
+</body>
+</html>

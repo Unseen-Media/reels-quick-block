@@ -1,0 +1,21 @@
+Tired of the same accounts showing up in your Reels feed? Reels Quick Block puts a Block button right on the reel, so you never have to open a profile and dig through menus.
+
+HOW IT WORKS
+• Open instagram.com/reels while logged in
+• A red "Block @username" button shows who posted the reel on screen
+• Tap it twice, or press B twice, to block that account
+• It moves to the next reel automatically (you can turn this off)
+
+FEATURES
+• One-tap blocking without leaving the reel
+• Keyboard shortcut: press B twice
+• Asks you twice, so you don't block anyone by accident
+• A list of everyone you've blocked from reels, in the toolbar popup
+• Can skip to the next reel automatically after you block someone
+
+PRIVACY
+• No accounts, no analytics, no ads, no tracking
+• Your block list is stored only on your computer
+• Only runs on instagram.com, and only talks to Instagram
+
+Reels Quick Block isn't affiliated with, endorsed by or sponsored by Instagram or Meta Platforms, Inc. Instagram is a trademark of Meta Platforms, Inc.

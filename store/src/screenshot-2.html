@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1280px; height: 800px; overflow: hidden; background: #0b0b0f; color: #fff; font-family: "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; padding: 0 90px; gap: 90px; }
+  .copy { flex: 1; }
+  h1 { font-size: 54px; line-height: 1.1; font-weight: 800; letter-spacing: -1px; }
+  h1 em { font-style: normal; color: #ff5c78; }
+  ul { margin-top: 30px; list-style: none; padding: 0; font-size: 24px; color: #bbb; }
+  li { margin: 16px 0; padding-left: 40px; position: relative; }
+  li::before { content: "✓"; position: absolute; left: 0; color: #4caf50; font-weight: 800; }
+  .popup { width: 400px; background: #111; border-radius: 14px; box-shadow: 0 0 0 1px #333, 0 30px 80px #000; overflow: hidden; font-size: 17px; }
+  header { padding: 20px 22px; border-bottom: 1px solid #2a2a2a; display: flex; gap: 14px; align-items: center; }
+  header img { width: 40px; }
+  header b { font-size: 20px; display: block; }
+  header span { color: #888; font-size: 14px; }
+  label { display: flex; gap: 12px; align-items: center; padding: 16px 22px; border-bottom: 1px solid #2a2a2a; }
+  .check { width: 20px; height: 20px; border-radius: 4px; background: #1a73e8; display: grid; place-items: center; font-size: 14px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #888; margin: 18px 22px 8px; }
+  .row { display: flex; justify-content: space-between; padding: 10px 22px; }
+  .row a { color: #8ab4f8; }
+  .row span { color: #666; }
+</style></head>
+<body>
+  <div class="copy">
+    <h1>Stays private and <em>stays on your computer</em>.</h1>
+    <ul>
+      <li>Your block list stays on your computer</li>
+      <li>No accounts, no tracking, no ads</li>
+      <li>Only runs on instagram.com</li>
+      <li>Asks you twice so you don't block by accident</li>
+    </ul>
+  </div>
+  <div class="popup">
+    <header><img src="../../extension/icons/icon128.png"><div><b>Reels Quick Block</b><span>Tap the red button or press B twice.</span></div></header>
+    <label><div class="check">✓</div> Skip to next reel after blocking</label>
+    <h2>Blocked from reels (6)</h2>
+    <div class="row"><a>@clickbait.king</a><span>10/17/2026</span></div>
+    <div class="row"><a>@crypto.moonshot</a><span>10/17/2026</span></div>
+    <div class="row"><a>@rage.bait.daily</a><span>10/16/2026</span></div>
+    <div class="row"><a>@fake.giveaways</a><span>10/15/2026</span></div>
+    <div class="row"><a>@loud_prank_tv</a><span>10/14/2026</span></div>
+    <div class="row" style="padding-bottom:22px"><a>@spam.reposts</a><span>10/12/2026</span></div>
+  </div>
+</body></html>

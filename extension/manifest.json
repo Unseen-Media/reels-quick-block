@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Reels Quick Block for Instagram",
+  "short_name": "Reels Quick Block",
+  "version": "1.0.0",
+  "description": "Block the account of the reel you're watching with one tap (or press B). Skips to the next reel automatically.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Reels Quick Block",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

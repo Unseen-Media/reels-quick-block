@@ -1,0 +1,43 @@
+#rqb-root {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483647;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  font: 600 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+#rqb-root.rqb-visible { display: flex; }
+
+#rqb-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #ed4956;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
+  font: inherit;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: transform .1s, background .15s;
+}
+#rqb-btn:hover { transform: scale(1.04); }
+#rqb-btn:disabled { opacity: .6; cursor: default; transform: none; }
+#rqb-btn.rqb-confirm { background: #b00020; }
+#rqb-btn.rqb-done { background: #2e7d32; }
+
+#rqb-toast {
+  background: rgba(20, 20, 20, .92);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  max-width: 320px;
+  display: none;
+}
+#rqb-toast.rqb-show { display: block; }

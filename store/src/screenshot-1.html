@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1280px; height: 800px; overflow: hidden; background: #0b0b0f; color: #fff; font-family: "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; padding: 0 90px; gap: 80px; }
+  .copy { flex: 1; }
+  .badge { display: inline-flex; align-items: center; gap: 10px; background: #ffffff14; padding: 8px 14px; border-radius: 999px; font-size: 18px; color: #ccc; margin-bottom: 26px; }
+  .badge img { width: 26px; }
+  h1 { font-size: 58px; line-height: 1.08; font-weight: 800; letter-spacing: -1px; }
+  h1 em { font-style: normal; color: #ff5c78; }
+  p { margin-top: 24px; font-size: 24px; color: #aaa; line-height: 1.45; }
+  kbd { background: #222; border: 1px solid #444; border-bottom-width: 3px; border-radius: 6px; padding: 1px 10px; color: #fff; font-family: inherit; }
+  .phone { width: 380px; height: 680px; border-radius: 34px; overflow: hidden; position: relative; box-shadow: 0 0 0 3px #2a2a2a, 0 30px 80px #000; background: linear-gradient(165deg, #a23b72 0%, #5b2a86 45%, #0d0d12 100%); }
+  .shape { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5; }
+  .who { position: absolute; left: 22px; bottom: 34px; display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 19px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #f18f01, #c73e1d); border: 2px solid #fff; }
+  .follow { border: 1.5px solid #fff; border-radius: 8px; padding: 3px 10px; font-size: 15px; }
+  .caption { position: absolute; left: 22px; bottom: 10px; font-size: 14px; color: #ddd; }
+  .rail { position: absolute; right: 18px; bottom: 150px; display: flex; flex-direction: column; gap: 22px; align-items: center; font-size: 13px; }
+  .rail div { width: 34px; height: 34px; border-radius: 50%; background: #ffffff30; }
+  .btn { position: absolute; right: 18px; bottom: 96px; background: #b00020; padding: 14px 20px; border-radius: 999px; font-weight: 700; font-size: 16px; box-shadow: 0 6px 20px #0009, 0 0 0 6px #ff5c7833; }
+  .hand { position: absolute; right: 70px; bottom: 50px; font-size: 44px; transform: rotate(-15deg); }
+</style></head>
+<body>
+  <div class="copy">
+    <div class="badge"><img src="../../extension/icons/icon128.png">Reels Quick Block</div>
+    <h1>Block accounts <em>right from the reel</em>.</h1>
+    <p>A button shows who posted the reel you're watching. Tap twice, or press <kbd>B</kbd> <kbd>B</kbd>, and they're gone. Then you jump straight to the next reel.</p>
+  </div>
+  <div class="phone">
+    <div class="shape" style="width:260px;height:260px;background:#f18f01;left:-60px;top:120px"></div>
+    <div class="shape" style="width:200px;height:200px;background:#2e86ab;right:-50px;top:300px"></div>
+    <div class="rail"><div></div><div></div><div></div></div>
+    <div class="btn">Tap again to block @clickbait.king</div>
+    <div class="hand">👆</div>
+    <div class="who"><div class="avatar"></div>clickbait.king <span class="follow">Follow</span></div>
+    <div class="caption">You won't BELIEVE what happens next…</div>
+  </div>
+</body></html>
